@@ -62,5 +62,9 @@ for (let i = 0; i < teamArray.length; i++) {
     console.log(key, teamMember[key]);
   }
   //stampare nel DOM
-  sectionRow.innerHTML += `nome: ${teamMember.nome}   ruolo: ${teamMember.ruolo}   foto: ${teamMember.foto} <br>`;
+  sectionRow.innerHTML += `nome: ${teamMember.nome}   ruolo: ${teamMember.ruolo}   
+  foto:  <img src="img/${teamMember.foto}" alt="">`;
+  sectionRow.innerHTML += ``
+
+
 }
