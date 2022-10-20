@@ -62,9 +62,38 @@ for (let i = 0; i < teamArray.length; i++) {
     console.log(key, teamMember[key]);
   }
   //stampare nel DOM
-  sectionRow.innerHTML += `nome: ${teamMember.nome}   ruolo: ${teamMember.ruolo}   
-  foto:  <img src="img/${teamMember.foto}" alt="">`;
-  sectionRow.innerHTML += ``
+    // sectionRow.innerHTML += `nome: ${teamMember.nome}   ruolo: ${teamMember.ruolo}
+    // foto:  <img src="img/${teamMember.foto}" alt="">`;
+
+  //stampare Card nel DOM
+  createCard(teamMember.foto, teamMember.nome, teamMember.ruolo)
+}
 
 
+
+
+
+
+
+/**
+ * Description Creare ColDiv con all'interno una CARD (img + title)
+ * @param {object data} foto dell'object nell'array
+ * @param {object data} nome dell'object nell'array
+ * @param {object data} ruolo dell'object nell'array
+ * @returns creation of the div 
+ */
+function createCard(foto, nome, ruolo) {
+    const colDiv = document.createElement("div");
+    colDiv.classList.add("col");
+    sectionRow.append(colDiv);
+    const cardDiv = document.createElement("div");
+    cardDiv.classList.add("card");
+    colDiv.append(cardDiv);
+    cardDiv.innerHTML += `<img src="img/${foto}" alt="">`;
+    const cardTitleDiv = document.createElement("div");
+    cardTitleDiv.classList.add("card-title");
+    cardTitleDiv.classList.add("text-center");
+    cardTitleDiv.classList.add("mt-2");
+    cardDiv.append(cardTitleDiv);
+    cardTitleDiv.innerHTML = `<h4>${nome} </h4> <span>${ruolo}</span>    `;
 }
