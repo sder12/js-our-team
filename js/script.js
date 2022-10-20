@@ -1,6 +1,6 @@
 //[*]ARRAY with OBJ TEAM members 
         //creare array team : nome ruolo foto
-//[]STAMPARE IN CONSOLE
+//[*]STAMPARE IN CONSOLE
         //ciclo for per percorrere array
         // ciclo for in per percorrere l'interno di ogni oggetto
         //stampare in console
@@ -43,3 +43,12 @@ const teamArray = [
     }
 ]
 console.log(teamArray)
+
+//Stampare in console 
+for(let i = 0; i < teamArray.length; i++){
+    const teamMember = teamArray[i];
+    // console.log(teamMember);
+    for(let key in teamMember){
+        console.log(key, teamMember[key]);
+    }
+}
